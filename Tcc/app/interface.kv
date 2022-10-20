@@ -4,10 +4,10 @@
         BoxLayout:
             orientation: 'vertical'
             MDToolbar:
-                md_bg_color: 7/255, 166/255, 54/255, 1    
+                md_bg_color: 3/255, 117/255, 37/255, 1
                 title: "Tela Inicial"
                 halign: "center"
-                right_action_items: [["account-arrow-left"]]
+                right_action_items: [["bell-plus"]]
             ScrollView:
                 MDBoxLayout:
                     orientation: 'vertical'
@@ -16,127 +16,175 @@
                         name: "Saldos"
                         orientation: 'horizontal'
                         size_hint: 1, None
-                        MDBoxLayout:
+                        MDFloatLayout:
                             orientation: 'vertical'
                             MDLabel:
                                 text: 'Saldo Atual'
-                                halign: "center"
+                                halign: 'center'
+                                pos_hint: {"center_x": .3, "center_y": .6}
+                                font_size: "16sp"
                             MDLabel:
                                 text: 'R$ 100,00'
-                                halign: "center"
-                        MDBoxLayout:
-                            orientation: 'vertical'
+                                halign: 'center'
+                                pos_hint: {"center_x": .3, "center_y": .25}
+                                font_size: "24sp"
                             MDLabel:
-                                text: 'Saldo Atual'
-                                halign: "center"
+                                text: 'Despesas Pendentes'
+                                halign: 'center'
+                                pos_hint: {"center_x": .7, "center_y": .6}
+                                font_size: "16sp"
                             MDLabel:
-                                text: 'R$ 100,00'
-                                halign: "center"
-                    MDBoxLayout:
-                        size_hint: 1, 0.01
-                        md_bg_color: 7/255, 7/255, 7/255, 1 
+                                text: 'R$ 50,00'
+                                halign: 'center'
+                                pos_hint: {"center_x": .7, "center_y": .25}
+                                font_size: "24sp"
+                            MDLabel:
+                                text: "___________________________________________________________"
+                                halign: 'center'
+                                pos_hint: {"center_y": .02}
+                                font_size: "16sp"
                     MDBoxLayout:
                         name: "Acoes"
                         orientation: 'vertical'
-                        size_hint: 1, 1.0
-                        spacing: 5
-                        MDLabel:
-                            text: 'Ações:'
-                        MDFillRoundFlatIconButton:
-                            icon: "language-python"
-                            text: "Adicionar despesas"
-                            size_hint_x: 0.9
-                            size_hint_y: 0.4
-                            pos_hint:{"center_x": 0.5}
-                            md_bg_color: 7/255, 166/255, 54/255, 1
-                        MDFillRoundFlatIconButton:
-                            icon: "language-python"
-                            text: "Adicionar receitas"
-                            size_hint_x: 0.9
-                            size_hint_y: 0.4
-                            pos_hint:{"center_x": 0.5}
-                            md_bg_color: 7/255, 166/255, 54/255, 1
-                        MDFillRoundFlatIconButton:
-                            icon: "language-python"
-                            text: "Cartões de crédito"
-                            size_hint_x: 0.9
-                            size_hint_y: 0.4
-                            pos_hint:{"center_x": 0.5}
-                            md_bg_color: 7/255, 166/255, 54/255, 1
-                        MDFillRoundFlatIconButton:
-                            icon: "language-python"
-                            text: "Categorias de gastos"
-                            size_hint_x: 0.9
-                            size_hint_y: 0.4
-                            pos_hint:{"center_x": 0.5}
-                            md_bg_color: 7/255, 166/255, 54/255, 1
-                        MDFillRoundFlatIconButton:
-                            icon: "language-python"
-                            text: "Despesas Fixas"
-                            size_hint_x: 0.9
-                            size_hint_y: 0.4
-                            pos_hint:{"center_x": 0.5}
-                            md_bg_color: 7/255, 166/255, 54/255, 1
-                    MDBoxLayout:
-                        size_hint: 1, 0.01
-                        md_bg_color: 7/255, 7/255, 7/255, 1 
+                        size_hint: 1, 1.5
+                        MDFloatLayout:
+                            orientation: 'vertical'
+                            MDLabel:
+                                text: "Ações:"
+                                halign: 'center'
+                                pos_hint: {"center_y": .80}
+                                font_size: "24sp"
+                            MDFloatingActionButton:
+                                icon: "minus-circle"
+                                md_bg_color: 7/255, 166/255, 54/255, 1
+                                pos_hint: {"center_x": .1, "center_y": .55}
+                            MDFloatingActionButton:
+                                icon: "plus-circle"
+                                md_bg_color: 7/255, 166/255, 54/255, 1
+                                pos_hint: {"center_x": .30, "center_y": .55}
+                            MDFloatingActionButton:
+                                icon: "credit-card-plus"
+                                md_bg_color: 7/255, 166/255, 54/255, 1
+                                pos_hint: {"center_x": .50,"center_y": .55}
+                            MDFloatingActionButton:
+                                icon: "chart-box"
+                                md_bg_color: 7/255, 166/255, 54/255, 1
+                                pos_hint: {"center_x": .70,"center_y": .55}
+                            MDFloatingActionButton:
+                                icon: "chart-pie"
+                                md_bg_color: 7/255, 166/255, 54/255, 1
+                                pos_hint: {"center_x": .9,"center_y": .55}
+                            MDLabel:
+                                text: "Despesas"
+                                halign: 'center'
+                                pos_hint: {"center_x": .1, "center_y": .35}
+                                font_size: "16sp"
+                            MDLabel:
+                                text: "Receitas"
+                                halign: 'center'
+                                pos_hint: {"center_x": .30, "center_y": .35}
+                                font_size: "16sp"
+                            MDLabel:
+                                text: "Cartões"
+                                halign: 'center'
+                                pos_hint: {"center_x": .50, "center_y": .35}
+                                font_size: "16sp"
+                            MDLabel:
+                                text: "Categorias"
+                                halign: 'center'
+                                pos_hint: {"center_x": .70, "center_y": .35}
+                                font_size: "16sp"
+                            MDLabel:
+                                text: "Metas"
+                                halign: 'center'
+                                pos_hint: {"center_x": .90, "center_y": .35}
+                                font_size: "16sp"
+                            MDLabel:
+                                text: "___________________________________________________________"
+                                halign: 'center'
+                                pos_hint: {"center_y": .25}
+                                font_size: "16sp"
+                            
                     MDBoxLayout:
                         name: "Gastos"
                         orientation: 'vertical'
-                        MDLabel:
-                            text: 'Gastos mensais'
-                        MDCard:
-                            size_hint: .7, .4
-                            focus_behavior: True
-                            pos_hint: {"center_x": .5, "center_y": .5}
-                            md_bg_color: 7/255, 166/255, 54/255, 1
-                            elevation: 6
-                    MDBoxLayout:
-                        size_hint: 1, 0.01
-                        md_bg_color: 7/255, 7/255, 7/255, 1 
+                        size_hint: 1, 1.5
+                        MDFloatLayout:
+                            orientation: 'vertical'
+                            MDLabel:
+                                text: "Gastos Mensais:"
+                                halign: 'center'
+                                pos_hint: {"center_y": .98}
+                                font_size: "24sp"
+                            MDCard:
+                                size_hint: .8, .8
+                                pos_hint: {"center_x": .5, "center_y": .50}
+                                md_bg_color: 7/255, 166/255, 54/255, 1
+                                elevation: 6
+                            MDLabel:
+                                text: "___________________________________________________________"
+                                halign: 'center'
+                                pos_hint: {"center_y": .01}
+                                font_size: "16sp"
                     MDBoxLayout:
                         name: "Limite"
                         orientation: 'vertical'
-                        MDLabel:
-                            text: 'Limite por categoria'
-                        MDCard:
-                            size_hint: .7, .4
-                            focus_behavior: True
-                            pos_hint: {"center_x": .5, "center_y": .5}
-                            md_bg_color: 7/255, 166/255, 54/255, 1
-                            elevation: 6
+                        size_hint: 1, 1.5
+                        MDFloatLayout:
+                            orientation: 'vertical'
+                            MDLabel:
+                                text: "Limite de Gastos:"
+                                halign: 'center'
+                                pos_hint: {"center_y": .8}
+                                font_size: "24sp"
+                            MDCard:
+                                size_hint: .8, .8
+                                pos_hint: {"center_x": .5, "center_y": .3}
+                                md_bg_color: 7/255, 166/255, 54/255, 1
+                                elevation: 6
             MDBoxLayout:
                 name: 'Navigation'
                 orientation: "horizontal"
                 size_hint: 1.0, 0.15
-                md_bg_color: 7/255, 166/255, 54/255, 1
-                MDBoxLayout:
+                md_bg_color: 3/255, 117/255, 37/255, 1
+                MDFloatLayout:
                     orientation: 'vertical'
                     MDIconButton:
-                        icon: 'menu-left'
-                        pos_hint: {"center_x": .5}
-                    MDLabel:
-                        text: "Ajustes"
-                        halign: "center"
-                MDBoxLayout:
-                    orientation: 'vertical'
+                        icon: 'help-circle'
+                        user_font_size : "35sp"
+                        pos_hint: {"center_y": .6, "center_x": .20}
+                        theme_text_color: "Custom"
+                        text_color: 255/255, 255/255, 255/255, 1
                     MDIconButton:
-                        icon: 'menu-left'
-                        pos_hint: {"center_x": .5}
-                    MDLabel:
-                        text: "Tela Inicial"
-                        halign: "center"
-                MDBoxLayout:
-                    orientation: 'vertical'
+                        icon: 'home'
+                        user_font_size : "35sp"
+                        pos_hint: {"center_y": .6, "center_x": .5}
+                        theme_text_color: "Custom"
+                        text_color: 255/255, 255/255, 255/255, 1
                     MDIconButton:
-                        icon: 'menu-left'
-                        pos_hint: {"center_x": .5}
+                        icon: 'cog'
+                        user_font_size : "35sp"
+                        pos_hint: {"center_y": .6, "center_x": .80}
+                        theme_text_color: "Custom"
+                        text_color: 255/255, 255/255, 255/255, 1
                     MDLabel:
                         text: "Ajuda"
                         halign: "center"
-
-                    
-
-
-                
-                    
+                        font_size: "16sp"
+                        pos_hint: {"center_y": .25, "center_x": .20}
+                        theme_text_color: "Custom"
+                        text_color: 255/255, 255/255, 255/255, 1
+                    MDLabel:
+                        text: "Tela Inicial"
+                        halign: "center"
+                        font_size: "16sp"
+                        pos_hint: {"center_y": .25, "center_x": .50}
+                        theme_text_color: "Custom"
+                        text_color: 255/255, 255/255, 255/255, 1
+                    MDLabel:
+                        text: "Ajustes"
+                        halign: "center"
+                        font_size: "16sp"
+                        pos_hint: {"center_y": .25, "center_x": .80}
+                        theme_text_color: "Custom"
+                        text_color: 255/255, 255/255, 255/255, 1
