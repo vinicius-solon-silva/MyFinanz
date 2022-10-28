@@ -13,7 +13,7 @@
             ScrollView:
                 MDBoxLayout:
                     orientation: 'vertical'
-                    size_hint: 1, 1.5
+                    size_hint: 1, 2
                     # Saldos
                     MDBoxLayout:
                         name: "Saldos"
@@ -50,7 +50,7 @@
                     MDBoxLayout:
                         name: "Acoes"
                         orientation: 'vertical'
-                        size_hint: 1, 1.5
+                        size_hint: 1, 1
                         MDFloatLayout:
                             orientation: 'vertical'
                             MDLabel:
@@ -128,8 +128,22 @@
                             MDCard:
                                 size_hint: .8, .8
                                 pos_hint: {"center_x": .5, "center_y": .50}
-                                md_bg_color: 7/255, 166/255, 54/255, 1
+                                orientation: 'vertical'
                                 elevation: 6
+                                MDBoxLayout:
+                                    md_bg_color: 226/255, 226/255, 226/255, 1
+                                    Image:
+                                        source: "../img/gastos_mensais.png"
+                                        size_hint: 1, 1
+                                MDBoxLayout:
+                                    size_hint: 1, 0.2
+                                    md_bg_color: 3/255, 117/255, 37/255, 1
+                                    MDRectangleFlatButton:
+                                        size_hint: 1, 1
+                                        text: "Ver mais"
+                                        halign: "center"
+                                        text_color: "white"
+                                        line_color: 0, 0, 0, 0
                             MDLabel:
                                 text: "___________________________________________________________"
                                 halign: 'center'
@@ -137,21 +151,35 @@
                                 font_size: "16sp"
                     ## Limites
                     MDBoxLayout:
-                        name: "Limite"
+                        name: "Limites"
                         orientation: 'vertical'
                         size_hint: 1, 1.5
                         MDFloatLayout:
                             orientation: 'vertical'
                             MDLabel:
-                                text: "Limite de Gastos:"
+                                text: "Limites por categoria:"
                                 halign: 'center'
-                                pos_hint: {"center_y": .8}
+                                pos_hint: {"center_y": .98}
                                 font_size: "24sp"
                             MDCard:
                                 size_hint: .8, .8
-                                pos_hint: {"center_x": .5, "center_y": .3}
-                                md_bg_color: 7/255, 166/255, 54/255, 1
+                                pos_hint: {"center_x": .5, "center_y": .50}
+                                orientation: 'vertical'
                                 elevation: 6
+                                MDBoxLayout:
+                                    md_bg_color: 226/255, 226/255, 226/255, 1
+                                    Image:
+                                        source: "../img/categorias.png"
+                                        size_hint: 1, 1
+                                MDBoxLayout:
+                                    size_hint: 1, 0.2
+                                    md_bg_color: 3/255, 117/255, 37/255, 1
+                                    MDRectangleFlatButton:
+                                        size_hint: 1, 1
+                                        text: "Ver mais"
+                                        halign: "center"
+                                        text_color: "white"
+                                        line_color: 0, 0, 0, 0
             ##  Rodapé                              
             MDBoxLayout:
                 name: 'Navigation'
@@ -725,4 +753,3 @@
                         pos_hint: {"center_y": .25, "center_x": .80}
                         theme_text_color: "Custom"
                         text_color: 255/255, 255/255, 255/255, 1
-
