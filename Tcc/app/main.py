@@ -5,7 +5,7 @@ from kivy.core.window import Window
 
 Window.size = (470,750)
 
-class Home(Screen):
+class home(Screen):
     ...
 
 class Interface(ScreenManager):
