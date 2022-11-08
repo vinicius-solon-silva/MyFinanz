@@ -492,11 +492,26 @@
                 title: "Notificações"
                 halign: "center"
                 right_action_items: [["bell-plus", lambda x: root.navigation('notificacoes')]]
-                left_action_items: [["arrow-left", lambda x: root.navigation('home')]]
-            ScrollView:
-                MDBoxLayout:
-                    orientation: 'vertical'
-                    size_hint: 1, 1.5
+                left_action_items: [["arrow-left", lambda x: root.navigation('home')]]           
+            MDBoxLayout:
+                orientation: 'vertical'
+                size_hint: 1, 1.5
+                MDFloatLayout:
+                    MDList:
+                        pos_hint: {"center_y": 0.83}
+                        TwoLineIconListItem:
+                            text: "Não esqueça de fazer seu lançamento de despesas diárias!"
+                            secondary_text: "Dura menos de 2 minutos, é coisa rápida"
+                            on_release: root.navigation('add_despesa')
+                            IconLeftWidget:
+                                icon: "arrow-right-bold-circle"
+                        TwoLineIconListItem:
+                            text: "Está chegando a data de pagamento do cartão!"
+                            secondary_text: "Entre na aba de cartões para mais detalhes"
+                            on_release: root.navigation('cartoes')
+                            IconLeftWidget:
+                                icon: "arrow-right-bold-circle"
+                        
             ##  Rodapé                              
             MDBoxLayout:
                 name: 'Navigation'
