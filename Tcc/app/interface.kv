@@ -974,6 +974,73 @@
                 MDBoxLayout:
                     orientation: 'vertical'
                     size_hint: 1, 1.5
+                    MDBoxLayout:
+                        orientation:'vertical'
+                        size_hint: 1, 0.5
+                        MDFloatLayout:
+                            MDLabel:
+                                text: "Nome da categoria:"
+                                halign: 'center'
+                                pos_hint: {"center_x": .23, "center_y": .90}
+                                font_size: "16sp"
+                            MDTextFieldRound:
+                                size_hint: .8, 0.1
+                                pos_hint: {"center_x": .5, "center_y": .78}
+                                theme_text_color: 'Custom'
+                                normal_color: 226/255, 226/255, 226/255, 1
+                            MDLabel:
+                                text: "Limite da categoria:"
+                                halign: 'center'
+                                pos_hint: {"center_x": .23, "center_y": .68}
+                                font_size: "16sp"
+                            MDTextFieldRound:
+                                size_hint: .8, 0.1
+                                pos_hint: {"center_x": .5, "center_y": .56}
+                                hint_text: 'Ex: 100,80'
+                                theme_text_color: 'Custom'
+                                normal_color: 226/255, 226/255, 226/255, 1
+                            MDFillRoundFlatButton:
+                                text: "Criar categoria"
+                                halign: "center"
+                                pos_hint:{"center_x": .5, "center_y":0.35}
+                                size_hint: .86, .2
+                                md_bg_color: 7/255, 166/255, 54/255, 1
+                                font_size: 24
+                                on_release: root.navigation('cadastro_profissional')
+                            MDLabel:
+                                text: "___________________________________________________________"
+                                halign: 'center'
+                                pos_hint:{"center_x": .5, "center_y":0.15}
+                                font_size: "16sp"
+                    MDBoxLayout:
+                        orientation:'vertical'
+                        size_hint: 1, 1.0
+                        MDFloatLayout:
+                            MDList:
+                                pos_hint: {"center_y": 0.83}
+                                TwoLineAvatarIconListItem:
+                                    text: "Alimentação"
+                                    secondary_text: "Limite R$500,00"
+                                    IconLeftWidget:
+                                        icon: "trash-can"
+                                    IconRightWidget:
+                                        icon: "pencil"
+                                TwoLineAvatarIconListItem:
+                                    text: "Transporte"
+                                    secondary_text: "Limite R$300,00"
+                                    IconLeftWidget:
+                                        icon: "trash-can"
+                                    IconRightWidget:
+                                        icon: "pencil"
+                                TwoLineAvatarIconListItem:
+                                    text: "Saúde"
+                                    secondary_text: "Limite R$100,00"
+                                    IconLeftWidget:
+                                        icon: "trash-can"
+                                    IconRightWidget:
+                                        icon: "pencil"
+
+
             ##  Rodapé                              
             MDBoxLayout:
                 name: 'Navigation'
