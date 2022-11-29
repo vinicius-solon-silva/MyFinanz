@@ -15,7 +15,7 @@ def gera_despesa(descricao, categoria, quantia, data, pago):
     class Despesa(Base):
         __tablename__ = 'despesa'
 
-        Descricao = Column(String(255))
+        Descricao = Column(String(255), primary_key=True)
         Categoria = Column(String(255))
         Quantia = Column(float)
         Data_Vencimento = Column(String(255))

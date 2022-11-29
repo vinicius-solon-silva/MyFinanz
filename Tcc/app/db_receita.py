@@ -15,7 +15,7 @@ def gera_receita(descricao, categoria, quantia, data):
     class Receita(Base):
         __tablename__ = 'receita'
 
-        Descricao = Column(String(255))
+        Descricao = Column(String(255), primary_key=True)
         Categoria = Column(String(255))
         Quantia = Column(float)
         Data_Recebida = Column(String(255))
