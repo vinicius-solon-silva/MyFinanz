@@ -4,7 +4,7 @@ from sqlalchemy.orm import sessionmaker, relationship
 from AUTH import CONN_STR
 
 
-def gera_categoria(nome,descricao):
+def gera_categoria(nome,limite):
 
     engine = create_engine(CONN_STR, echo=False)
     Sessions = sessionmaker(bind=engine)
@@ -16,11 +16,12 @@ def gera_categoria(nome,descricao):
         __tablename__ = 'categoria'
 
         Nome = Column(String(255))
-        Descricao = Column(String(255))
+        Limite = Column(BigInteger)
+        
 
         
     Base.metadata.create_all(engine)
-    mfCateg = Categoria(Nome=nome, Decricao=descricao)
+    mfCateg = Categoria(Nome=nome, Limite=limite)
     session.add(mfCateg)
     session.commit()
     session.close()
