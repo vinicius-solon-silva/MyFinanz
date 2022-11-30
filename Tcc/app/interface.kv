@@ -358,6 +358,9 @@
                                         halign: "center"
                                         text_color: "white"
                                         line_color: 0, 0, 0, 0
+                                        on_release: 
+                                            root.navigation('show_ctg')
+                                            root.gen_chart()
                             MDLabel:
                                 text: "___________________________________________________________"
                                 halign: 'center'
@@ -818,24 +821,23 @@
                         theme_text_color: 'Custom'
                         normal_color: 226/255, 226/255, 226/255, 1
                     MDLabel:
-                        text: 'Categoria'
+                        text: 'Data'
                         halign: "center"
-                        pos_hint: {"center_x": .15, "center_y": .75}
+                        pos_hint: {"center_x": .12, "center_y": .75}
                     MDTextFieldRound:
                         size_hint: .8, .06
                         pos_hint: {"center_x": .5, "center_y": .68}
                         theme_text_color: 'Custom'
                         normal_color: 226/255, 226/255, 226/255, 1
                     MDLabel:
-                        text: 'Data'
+                        text: 'Categoria'
                         halign: "center"
-                        pos_hint: {"center_x": .12, "center_y": .6}
-                    MDTextFieldRound:
-                        size_hint: .8, .06
-                        pos_hint: {"center_x": .5, "center_y": .53}
-                        theme_text_color: 'Custom'
-                        max_text_length: 10
-                        normal_color: 226/255, 226/255, 226/255, 1
+                        pos_hint: {"center_x": .15, "center_y": .6}
+                    MDDropDownItem:
+                        id: drop_item
+                        size_hint: .85, .06
+                        pos_hint: {'center_x': .5 , 'center_y': .53}
+                        text: 'Item 0'
                     MDFillRoundFlatButton:
                         text: "Adicionar"
                         halign: "center"
@@ -975,6 +977,7 @@
                     orientation: 'vertical'
                     size_hint: 1, 1.5
                     MDBoxLayout:
+                        id: ctg_form_box
                         orientation:'vertical'
                         size_hint: 1, 0.5
                         MDFloatLayout:
@@ -1008,7 +1011,9 @@
                                 size_hint: .86, .2
                                 md_bg_color: 7/255, 166/255, 54/255, 1
                                 font_size: 24
-                                on_release: root.add_categoria(ctg_nome.text, ctg_limite.text)
+                                on_release: 
+                                    msg=root.add_categoria(ctg_nome.text, ctg_limite.text)
+                                    app.show_dialog(msg)
                             MDLabel:
                                 text: "___________________________________________________________"
                                 halign: 'center'
@@ -1095,13 +1100,13 @@
                         text_color: 255/255, 255/255, 255/255, 1
 
     Screen:
-        name: 'metas'
+        name: 'show_ctg'
         BoxLayout:
             orientation: 'vertical'            
             ## Cabecalho
             MDToolbar:
                 md_bg_color: 3/255, 117/255, 37/255, 1
-                title: "Metas"
+                title: "Categorias"
                 halign: "center"
                 right_action_items: [["bell-plus", lambda x: root.navigation('notificacoes')]]
                 left_action_items: [["arrow-left", lambda x: root.navigation('home')]]
@@ -1109,6 +1114,16 @@
                 MDBoxLayout:
                     orientation: 'vertical'
                     size_hint: 1, 1.5
+                    MDFloatLayout:
+                        MDLabel: 
+                            text: "Categorias de gasto:"
+                            halign: 'center'
+                            pos_hint: {"center_x": .5, "center_y": .95}
+                            font_size: "24sp"
+                        Image:
+                            source: "../charts/chart.png"
+                            pos_hint: {"center_x": .5, "center_y": .70}
+                            size_hint: 1, 1
             ##  Rodapé                              
             MDBoxLayout:
                 name: 'Navigation'
@@ -1159,22 +1174,3 @@
                         pos_hint: {"center_y": .25, "center_x": .80}
                         theme_text_color: "Custom"
                         text_color: 255/255, 255/255, 255/255, 1
-
-<SuccessCard>
-    MDCard:
-        orientation: "vertical"
-        padding: "8dp"
-        size_hint: None, None
-        size: "280dp", "180dp"
-        pos_hint: {"center_x": .5, "center_y": .5}
-
-        MDLabel:
-            text: "Title"
-            size_hint: 0.2, 0.2
-
-        MDSeparator:
-            height: "1dp"
-
-        MDLabel:
-            id: message
-            text: "Body"

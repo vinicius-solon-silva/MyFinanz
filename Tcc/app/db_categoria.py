@@ -18,12 +18,14 @@ def gera_categoria(nome, limite):
         Limite = Column(BigInteger)
 
 
-        
-    Base.metadata.create_all(engine)
-    mfCateg = Categoria(Nome=nome, Limite=limite)
-    session.add(mfCateg)
-    session.commit()
-    session.close()
-    success = "Categoria gerada com sucesso!"
+    try:    
+        Base.metadata.create_all(engine)
+        mfCateg = Categoria(Nome=nome, Limite=limite)
+        session.add(mfCateg)
+        session.commit()
+        session.close()
+        success = "Categoria gerada com sucesso!"
+    except:
+        success = 'Algo deu errado... Verifique as informações!'
 
-    return success
+    return str(success)
