@@ -1,13 +1,9 @@
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import create_engine, Column, BigInteger, String, Date, ForeignKey
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import sessionmaker, relationship
 from AUTH import CONN_STR
 
-
-def gera_categoria(nome,limite):
-
-    nome = str(nome)
-    limite = str(limite)
+def gera_categoria(nome, limite):
 
     engine = create_engine(CONN_STR, echo=False)
     Sessions = sessionmaker(bind=engine)
@@ -18,9 +14,9 @@ def gera_categoria(nome,limite):
     class Categoria(Base):
         __tablename__ = 'categoria'
 
-        Nome = Column(String(255), primary_key=True)
-        Limite = Column(String(255))
-        
+        Nome = Column(String(255), primary_key = True)
+        Limite = Column(BigInteger)
+
 
         
     Base.metadata.create_all(engine)

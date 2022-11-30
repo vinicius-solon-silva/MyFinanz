@@ -17,7 +17,7 @@ def cadastrar_usuario(nome,email,cpf,data_nasc,senha,cargo_profissional,salario_
 
     class Usuario(Base):
         __tablename__ = 'usuario'
-        #children = relationship("Cartao")
+        children = relationship("Cartao")
 
         Nome = Column(String(255))
         Email = Column(String(255))

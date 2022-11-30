@@ -16,8 +16,8 @@ def cadastrar_cartao(nome, cpf, numCartao, data, tipo):
         __tablename__ = 'cartao'
 
         Nome_Titular = Column(String(255))
-        CPF_Titular = Column(BigInteger)
-        Numero_Cartao = Column(BigInteger, primary_key=True)
+        CPF_Titular = Column(BigInteger, ForeignKey("usuario.CPF"))
+        Numero_Cartao = Column(BigInteger)
         Data_Vencimento = Column(String(255))
         Tipo = Column(String(255))
 
