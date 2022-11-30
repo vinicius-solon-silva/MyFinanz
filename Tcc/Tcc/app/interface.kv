@@ -1,0 +1,1164 @@
+<Interface>:
+    Screen:
+        name: 'login'
+        MDBoxLayout:
+            orientation: 'vertical'            
+            size_hint: 1, 1
+            md_bg_color: 3/255, 117/255, 37/255, 1
+            MDBoxLayout:
+                orientation: 'vertical'    
+                size_hint: 1, 0.5
+                MDFloatLayout:
+                    Image:
+                        source: "../img/logo.png"
+                        size_hint: 0.9, 0.9
+                        pos_hint:{"center_x": 0.5, "center_y":0.5}
+            MDBoxLayout:
+                orientation: 'vertical'    
+                size_hint: 1, 0.4
+                MDFloatLayout:
+                    MDLabel:
+                        text: 'Email'
+                        halign: 'center'
+                        pos_hint: {"center_x": .15, "center_y": .88}
+                        font_size: "24sp"
+                        theme_text_color: 'Custom'
+                        text_color: 1,1,1,1
+                    MDTextFieldRound:
+                        size_hint: .8, .13
+                        pos_hint: {"center_x": .5, "center_y": .75}
+                        theme_text_color: 'Custom'
+                        normal_color: 226/255, 226/255, 226/255, 1
+                    MDLabel:
+                        text: 'Senha'
+                        halign: 'center'
+                        pos_hint: {"center_x": .15, "center_y": .58}
+                        font_size: "24sp"
+                        theme_text_color: 'Custom'
+                        text_color: 1,1,1,1
+                    MDTextFieldRound:
+                        size_hint: .8, .13
+                        pos_hint: {"center_x": .5, "center_y": .45}
+                        theme_text_color: 'Custom'
+                        normal_color: 226/255, 226/255, 226/255, 1
+                    MDFillRoundFlatButton:
+                        text: "Entrar"
+                        halign: "center"
+                        pos_hint:{"center_x": .5, "center_y":0.20}
+                        size_hint: .86, .2
+                        md_bg_color: 7/255, 166/255, 54/255, 1
+                        font_size: 24
+                        on_release: root.navigation('home')
+            MDBoxLayout:
+                orientation: 'vertical'    
+                size_hint: 1, 0.1
+                md_bg_color: 7/255, 166/255, 54/255, 1
+                MDFlatButton:
+                    text: 'Não possui conta? Cadastre-se aqui!'
+                    halign: 'center'
+                    pos_hint: {"center_x": .5, "center_y": .5}
+                    size_hint: 1, 1
+                    font_size: "16sp"
+                    theme_text_color: 'Custom'
+                    text_color: 1,1,1,1
+                    on_release: root.navigation('cadastro_pessoal')
+    Screen:
+        name: "cadastro_pessoal"        
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint: 1, 1
+            MDBoxLayout:
+                orientation:'vertical'
+                size_hint: 1, 0.1
+                md_bg_color: 3/255, 117/255, 37/255, 1
+                MDFloatLayout:
+                    MDLabel:
+                        text: 'Informações pessoais'
+                        halign: 'center'
+                        font_size: "24sp"
+                        halign: 'center'
+                        pos_hint: {"center_x": .4, "center_y": .5}
+                        theme_text_color: 'Custom'
+                        text_color: 1,1,1,1
+                    MDIconButton:
+                        icon: 'arrow-left'
+                        user_font_size : "32sp"
+                        pos_hint: {"center_x": .08, "center_y": .5}
+                        theme_text_color: "Custom"
+                        text_color: 255/255, 255/255, 255/255, 1
+                        on_release: root.navigation('login')
+            MDBoxLayout:
+                orientation:'vertical'
+                size_hint: 1, 0.9
+                MDFloatLayout:
+                    MDLabel:
+                        text: "Nome completo:"
+                        halign: 'center'
+                        pos_hint: {"center_x": .2, "center_y": .90}
+                        font_size: "16sp"
+                    MDTextFieldRound:
+                        size_hint: .8, .06
+                        pos_hint: {"center_x": .5, "center_y": .85}
+                        theme_text_color: 'Custom'
+                        normal_color: 226/255, 226/255, 226/255, 1
+                    MDLabel:
+                        text: "Email"
+                        halign: 'center'
+                        pos_hint: {"center_x": .12, "center_y": .75}
+                        font_size: "16sp"
+                    MDTextFieldRound:
+                        size_hint: .8, .06
+                        pos_hint: {"center_x": .5, "center_y": .70}
+                        theme_text_color: 'Custom'
+                        normal_color: 226/255, 226/255, 226/255, 1  
+                    MDLabel:
+                        text: "Data de Nascimento:"
+                        halign: 'center'
+                        pos_hint: {"center_x": .23, "center_y": .60}
+                        font_size: "16sp"
+                    MDTextFieldRound:
+                        size_hint: .8, .06
+                        pos_hint: {"center_x": .5, "center_y": .55}
+                        theme_text_color: 'Custom'
+                        normal_color: 226/255, 226/255, 226/255, 1
+                    MDLabel:
+                        text: "Senha:"
+                        halign: 'center'
+                        pos_hint: {"center_x": .12, "center_y": .45}
+                        font_size: "16sp"
+                    MDTextFieldRound:
+                        size_hint: .8, .06
+                        pos_hint: {"center_x": .5, "center_y": .40}
+                        theme_text_color: 'Custom'
+                        normal_color: 226/255, 226/255, 226/255, 1 
+                    MDLabel:
+                        text: "Confirmar Senha:"
+                        halign: 'center'
+                        pos_hint: {"center_x": .21, "center_y": .30}
+                        font_size: "16sp"
+                    MDTextFieldRound:
+                        size_hint: .8, .06
+                        pos_hint: {"center_x": .5, "center_y": .25}
+                        theme_text_color: 'Custom'
+                        normal_color: 226/255, 226/255, 226/255, 1 
+                    MDFillRoundFlatButton:
+                        text: "Prosseguir"
+                        halign: "center"
+                        pos_hint:{"center_x": .5, "center_y":0.10}
+                        size_hint: .86, .08
+                        md_bg_color: 7/255, 166/255, 54/255, 1
+                        font_size: 24
+                        on_release: root.navigation('cadastro_profissional')
+    Screen:
+        name: "cadastro_profissional"        
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint: 1, 1
+            MDBoxLayout:
+                orientation:'vertical'
+                size_hint: 1, 0.1
+                md_bg_color: 3/255, 117/255, 37/255, 1
+                MDFloatLayout:
+                    MDLabel:
+                        text: 'Informações profissionais'
+                        halign: 'center'
+                        font_size: "24sp"
+                        halign: 'center'
+                        pos_hint: {"center_x": .45, "center_y": .5}
+                        theme_text_color: 'Custom'
+                        text_color: 1,1,1,1
+                    MDIconButton:
+                        icon: 'arrow-left'
+                        user_font_size : "32sp"
+                        pos_hint: {"center_x": .08, "center_y": .5}
+                        theme_text_color: "Custom"
+                        text_color: 255/255, 255/255, 255/255, 1
+                        on_release: root.navigation('cadastro_pessoal')
+            MDBoxLayout:
+                orientation:'vertical'
+                size_hint: 1, 0.9
+                MDFloatLayout:
+                    MDLabel:
+                        text: "Cargo profissional:"
+                        halign: 'center'
+                        pos_hint: {"center_x": .22, "center_y": .90}
+                        font_size: "16sp"
+                    MDTextFieldRound:
+                        size_hint: .8, .06
+                        pos_hint: {"center_x": .5, "center_y": .85}
+                        theme_text_color: 'Custom'
+                        normal_color: 226/255, 226/255, 226/255, 1
+                    MDLabel:
+                        text: "Salário mensal:"
+                        halign: 'center'
+                        pos_hint: {"center_x": .20, "center_y": .75}
+                        font_size: "16sp"
+                    MDTextFieldRound:
+                        size_hint: .8, .06
+                        pos_hint: {"center_x": .5, "center_y": .70}
+                        theme_text_color: 'Custom'
+                        normal_color: 226/255, 226/255, 226/255, 1  
+                    MDCheckbox:
+                        size_hint: None, None
+                        pos_hint: {'center_x': .10, 'center_y': .60}
+                    MDLabel:
+                        text: 'Concordo com os termos do aplicativo Myfinaz'
+                        halign: "center"
+                        pos_hint: {"center_x": .5, "center_y": .60}
+                    MDFillRoundFlatButton:
+                        text: "Cadastrar"
+                        halign: "center"
+                        pos_hint:{"center_x": .5, "center_y":0.10}
+                        size_hint: .86, .08
+                        md_bg_color: 7/255, 166/255, 54/255, 1
+                        font_size: 24
+                        on_release: root.navigation('home')
+
+    Screen:
+        name: "home"        
+        BoxLayout:
+            orientation: 'vertical'
+            ## Cabecalho
+            MDToolbar:
+                md_bg_color: 3/255, 117/255, 37/255, 1
+                title: "Tela Inicial"
+                halign: "center"
+                right_action_items: [["bell-plus", lambda x: root.navigation('notificacoes')]]
+            ScrollView:
+                MDBoxLayout:
+                    orientation: 'vertical'
+                    size_hint: 1, 2
+                    # Saldos
+                    MDBoxLayout:
+                        name: "Saldos"
+                        orientation: 'horizontal'
+                        size_hint: 1, None
+                        MDFloatLayout:
+                            orientation: 'vertical'
+                            MDLabel:
+                                text: 'Saldo Atual'
+                                halign: 'center'
+                                pos_hint: {"center_x": .3, "center_y": .6}
+                                font_size: "16sp"
+                            MDLabel:
+                                text: 'R$ 100,00'
+                                halign: 'center'
+                                pos_hint: {"center_x": .3, "center_y": .25}
+                                font_size: "24sp"
+                            MDLabel:
+                                text: 'Despesas Pendentes'
+                                halign: 'center'
+                                pos_hint: {"center_x": .7, "center_y": .6}
+                                font_size: "16sp"
+                            MDLabel:
+                                text: 'R$ 50,00'
+                                halign: 'center'
+                                pos_hint: {"center_x": .7, "center_y": .25}
+                                font_size: "24sp"
+                            MDLabel:
+                                text: "___________________________________________________________"
+                                halign: 'center'
+                                pos_hint: {"center_y": .02}
+                                font_size: "16sp"
+                    ## Ações
+                    MDBoxLayout:
+                        name: "Acoes"
+                        orientation: 'vertical'
+                        size_hint: 1, 1
+                        MDFloatLayout:
+                            orientation: 'vertical'
+                            MDLabel:
+                                text: "Ações:"
+                                halign: 'center'
+                                pos_hint: {"center_y": .80}
+                                font_size: "24sp"
+                            MDFloatingActionButton:
+                                icon: "minus-circle"
+                                md_bg_color: 7/255, 166/255, 54/255, 1
+                                pos_hint: {"center_x": .1, "center_y": .55}
+                                on_release: root.navigation('add_despesa')
+                            MDFloatingActionButton:
+                                icon: "plus-circle"
+                                md_bg_color: 7/255, 166/255, 54/255, 1
+                                pos_hint: {"center_x": .30, "center_y": .55}
+                                on_release: root.navigation('add_receita')
+                            MDFloatingActionButton:
+                                icon: "credit-card-plus"
+                                md_bg_color: 7/255, 166/255, 54/255, 1
+                                pos_hint: {"center_x": .50,"center_y": .55}
+                                on_release: root.navigation('cartoes')
+                            MDFloatingActionButton:
+                                icon: "chart-box"
+                                md_bg_color: 7/255, 166/255, 54/255, 1
+                                pos_hint: {"center_x": .70,"center_y": .55}
+                                on_release: root.navigation('categorias')
+                            MDFloatingActionButton:
+                                icon: "chart-pie"
+                                md_bg_color: 7/255, 166/255, 54/255, 1
+                                pos_hint: {"center_x": .9,"center_y": .55}
+                                on_release: root.navigation('metas')
+                            MDLabel:
+                                text: "Despesas"
+                                halign: 'center'
+                                pos_hint: {"center_x": .1, "center_y": .35}
+                                font_size: "16sp"
+                            MDLabel:
+                                text: "Receitas"
+                                halign: 'center'
+                                pos_hint: {"center_x": .30, "center_y": .35}
+                                font_size: "16sp"
+                            MDLabel:
+                                text: "Cartões"
+                                halign: 'center'
+                                pos_hint: {"center_x": .50, "center_y": .35}
+                                font_size: "16sp"
+                            MDLabel:
+                                text: "Categorias"
+                                halign: 'center'
+                                pos_hint: {"center_x": .70, "center_y": .35}
+                                font_size: "16sp"
+                            MDLabel:
+                                text: "Metas"
+                                halign: 'center'
+                                pos_hint: {"center_x": .90, "center_y": .35}
+                                font_size: "16sp"
+                            MDLabel:
+                                text: "___________________________________________________________"
+                                halign: 'center'
+                                pos_hint: {"center_y": .25}
+                                font_size: "16sp"
+                    ## Gastos        
+                    MDBoxLayout:
+                        name: "Gastos"
+                        orientation: 'vertical'
+                        size_hint: 1, 1.5
+                        MDFloatLayout:
+                            orientation: 'vertical'
+                            MDLabel:
+                                text: "Gastos Mensais:"
+                                halign: 'center'
+                                pos_hint: {"center_y": .98}
+                                font_size: "24sp"
+                            MDCard:
+                                size_hint: .8, .8
+                                pos_hint: {"center_x": .5, "center_y": .50}
+                                orientation: 'vertical'
+                                elevation: 6
+                                MDBoxLayout:
+                                    md_bg_color: 226/255, 226/255, 226/255, 1
+                                    Image:
+                                        source: "../img/gastos_mensais.png"
+                                        size_hint: 1, 1
+                                MDBoxLayout:
+                                    size_hint: 1, 0.2
+                                    md_bg_color: 3/255, 117/255, 37/255, 1
+                                    MDRectangleFlatButton:
+                                        size_hint: 1, 1
+                                        text: "Ver mais"
+                                        halign: "center"
+                                        text_color: "white"
+                                        line_color: 0, 0, 0, 0
+                            MDLabel:
+                                text: "___________________________________________________________"
+                                halign: 'center'
+                                pos_hint: {"center_y": .01}
+                                font_size: "16sp"
+                    ## Limites
+                    MDBoxLayout:
+                        name: "Limites"
+                        orientation: 'vertical'
+                        size_hint: 1, 1.5
+                        MDFloatLayout:
+                            orientation: 'vertical'
+                            MDLabel:
+                                text: "Limites por categoria:"
+                                halign: 'center'
+                                pos_hint: {"center_y": .86}
+                                font_size: "24sp"
+                            MDCard:
+                                size_hint: .8, .8
+                                pos_hint: {"center_x": .5, "center_y": .40}
+                                orientation: 'vertical'
+                                elevation: 6
+                                MDBoxLayout:
+                                    md_bg_color: 226/255, 226/255, 226/255, 1
+                                    Image:
+                                        source: "../img/categorias.png"
+                                        size_hint: 1, 1
+                                MDBoxLayout:
+                                    size_hint: 1, 0.2
+                                    md_bg_color: 3/255, 117/255, 37/255, 1
+                                    MDRectangleFlatButton:
+                                        size_hint: 1, 1
+                                        text: "Ver mais"
+                                        halign: "center"
+                                        text_color: "white"
+                                        line_color: 0, 0, 0, 0
+            ##  Rodapé                              
+            MDBoxLayout:
+                name: 'Navigation'
+                orientation: "horizontal"
+                size_hint: 1.0, 0.15
+                md_bg_color: 3/255, 117/255, 37/255, 1
+                MDFloatLayout:
+                    orientation: 'vertical'
+                    MDIconButton:
+                        icon: 'help-circle'
+                        user_font_size : "35sp"
+                        pos_hint: {"center_y": .6, "center_x": .20}
+                        theme_text_color: "Custom"
+                        text_color: 255/255, 255/255, 255/255, 1
+                        on_release: root.navigation('ajuda')
+                    MDIconButton:
+                        icon: 'home'
+                        user_font_size : "35sp"
+                        pos_hint: {"center_y": .6, "center_x": .5}
+                        theme_text_color: "Custom"
+                        text_color: 255/255, 255/255, 255/255, 1
+                        on_release: root.navigation('home')
+                    MDIconButton:
+                        icon: 'cog'
+                        user_font_size : "35sp"
+                        pos_hint: {"center_y": .6, "center_x": .80}
+                        theme_text_color: "Custom"
+                        text_color: 255/255, 255/255, 255/255, 1
+                        on_release: root.navigation('ajustes')
+                    MDLabel:
+                        text: "Ajuda"
+                        halign: "center"
+                        font_size: "16sp"
+                        pos_hint: {"center_y": .25, "center_x": .20}
+                        theme_text_color: "Custom"
+                        text_color: 255/255, 255/255, 255/255, 1
+                    MDLabel:
+                        text: "Tela Inicial"
+                        halign: "center"
+                        font_size: "16sp"
+                        pos_hint: {"center_y": .25, "center_x": .50}
+                        theme_text_color: "Custom"
+                        text_color: 255/255, 255/255, 255/255, 1
+                    MDLabel:
+                        text: "Ajustes"
+                        halign: "center"
+                        font_size: "16sp"
+                        pos_hint: {"center_y": .25, "center_x": .80}
+                        theme_text_color: "Custom"
+                        text_color: 255/255, 255/255, 255/255, 1
+    Screen:
+        name: 'add_despesa'
+        BoxLayout:
+            orientation: 'vertical'            
+            ## Cabecalho
+            MDToolbar:
+                md_bg_color: 3/255, 117/255, 37/255, 1
+                title: "Adicionar Despesas"
+                halign: "center"
+                right_action_items: [["bell-plus", lambda x: root.navigation('notificacoes')]]
+                left_action_items: [["arrow-left", lambda x: root.navigation('home')]]
+            MDBoxLayout:
+                orientation: 'vertical'
+                size_hint: 1, 1.5
+                MDFloatLayout:
+                    orientation: 'vertical'
+                    size_hint: 1, .1
+                    MDLabel:
+                        text: 'Insira o valor:'
+                        halign: 'center'
+                        pos_hint: {"center_x": .5, "center_y": .6}
+                        font_size: "16sp"
+                    MDTextField:
+                        text: 'R$ 00,00'
+                        halign: 'center'
+                        pos_hint: {"center_x": .5, "center_y": .25}
+                        font_size: "24sp"
+                        line_color_focus: 177/255, 177/255, 177/255, 1
+                MDFloatLayout:
+                    orientation: 'vertical'
+                    size_hint: 1, .9
+                    MDLabel:
+                        text: 'Descrição'
+                        halign: "center"
+                        pos_hint: {"center_x": .15, "center_y": .9}
+                    MDTextFieldRound:
+                        size_hint: .8, .06
+                        pos_hint: {"center_x": .5, "center_y": .83}
+                        theme_text_color: 'Custom'
+                        normal_color: 226/255, 226/255, 226/255, 1
+                    MDLabel:
+                        text: 'Categoria'
+                        halign: "center"
+                        pos_hint: {"center_x": .15, "center_y": .75}
+                    MDTextFieldRound:
+                        size_hint: .8, .06
+                        pos_hint: {"center_x": .5, "center_y": .68}
+                        theme_text_color: 'Custom'
+                        normal_color: 226/255, 226/255, 226/255, 1
+                    MDLabel:
+                        text: 'Data'
+                        halign: "center"
+                        pos_hint: {"center_x": .12, "center_y": .6}
+                    MDTextFieldRound:
+                        size_hint: .8, .06
+                        pos_hint: {"center_x": .5, "center_y": .53}
+                        theme_text_color: 'Custom'
+                        normal_color: 226/255, 226/255, 226/255, 1
+                    MDCheckbox:
+                        size_hint: None, None
+                        pos_hint: {'center_x': .12, 'center_y': .45}
+                    MDLabel:
+                        text: 'Pago'
+                        halign: "center"
+                        pos_hint: {"center_x": .2, "center_y": .45}
+                    MDFillRoundFlatButton:
+                        text: "Adicionar"
+                        halign: "center"
+                        pos_hint:{"center_x": .5, "center_y":0.25}
+                        size_hint: .8, .13
+                        md_bg_color: 3/255, 117/255, 37/255, 1
+                        font_size: 24
+            ##  Rodapé                              
+            MDBoxLayout:
+                name: 'Navigation'
+                orientation: "horizontal"
+                size_hint: 1.0, 0.15
+                md_bg_color: 3/255, 117/255, 37/255, 1
+                MDFloatLayout:
+                    orientation: 'vertical'
+                    MDIconButton:
+                        icon: 'help-circle'
+                        user_font_size : "35sp"
+                        pos_hint: {"center_y": .6, "center_x": .20}
+                        theme_text_color: "Custom"
+                        text_color: 255/255, 255/255, 255/255, 1
+                        on_release: root.navigation('ajuda')
+                    MDIconButton:
+                        icon: 'home'
+                        user_font_size : "35sp"
+                        pos_hint: {"center_y": .6, "center_x": .5}
+                        theme_text_color: "Custom"
+                        text_color: 255/255, 255/255, 255/255, 1
+                        on_release: root.navigation('home')
+                    MDIconButton:
+                        icon: 'cog'
+                        user_font_size : "35sp"
+                        pos_hint: {"center_y": .6, "center_x": .80}
+                        theme_text_color: "Custom"
+                        text_color: 255/255, 255/255, 255/255, 1
+                        on_release: root.navigation('ajustes')
+                    MDLabel:
+                        text: "Ajuda"
+                        halign: "center"
+                        font_size: "16sp"
+                        pos_hint: {"center_y": .25, "center_x": .20}
+                        theme_text_color: "Custom"
+                        text_color: 255/255, 255/255, 255/255, 1
+                    MDLabel:
+                        text: "Tela Inicial"
+                        halign: "center"
+                        font_size: "16sp"
+                        pos_hint: {"center_y": .25, "center_x": .50}
+                        theme_text_color: "Custom"
+                        text_color: 255/255, 255/255, 255/255, 1
+                    MDLabel:
+                        text: "Ajustes"
+                        halign: "center"
+                        font_size: "16sp"
+                        pos_hint: {"center_y": .25, "center_x": .80}
+                        theme_text_color: "Custom"
+                        text_color: 255/255, 255/255, 255/255, 1
+    Screen:
+        name: 'ajustes'
+        BoxLayout:
+            orientation: 'vertical'            
+            ## Cabecalho
+            MDToolbar:
+                md_bg_color: 3/255, 117/255, 37/255, 1
+                title: "Ajustes"
+                halign: "center"
+                right_action_items: [["bell-plus", lambda x: root.navigation('notificacoes')]]
+                left_action_items: [["arrow-left", lambda x: root.navigation('home')]]
+            ScrollView:
+                MDBoxLayout:
+                    orientation: 'vertical'
+                    size_hint: 1, 1.5
+            ##  Rodapé                              
+            MDBoxLayout:
+                name: 'Navigation'
+                orientation: "horizontal"
+                size_hint: 1.0, 0.15
+                md_bg_color: 3/255, 117/255, 37/255, 1
+                MDFloatLayout:
+                    orientation: 'vertical'
+                    MDIconButton:
+                        icon: 'help-circle'
+                        user_font_size : "35sp"
+                        pos_hint: {"center_y": .6, "center_x": .20}
+                        theme_text_color: "Custom"
+                        text_color: 255/255, 255/255, 255/255, 1
+                        on_release: root.navigation('ajuda')
+                    MDIconButton:
+                        icon: 'home'
+                        user_font_size : "35sp"
+                        pos_hint: {"center_y": .6, "center_x": .5}
+                        theme_text_color: "Custom"
+                        text_color: 255/255, 255/255, 255/255, 1
+                        on_release: root.navigation('home')
+                    MDIconButton:
+                        icon: 'cog'
+                        user_font_size : "35sp"
+                        pos_hint: {"center_y": .6, "center_x": .80}
+                        theme_text_color: "Custom"
+                        text_color: 255/255, 255/255, 255/255, 1
+                        on_release: root.navigation('ajustes')
+                    MDLabel:
+                        text: "Ajuda"
+                        halign: "center"
+                        font_size: "16sp"
+                        pos_hint: {"center_y": .25, "center_x": .20}
+                        theme_text_color: "Custom"
+                        text_color: 255/255, 255/255, 255/255, 1
+                    MDLabel:
+                        text: "Tela Inicial"
+                        halign: "center"
+                        font_size: "16sp"
+                        pos_hint: {"center_y": .25, "center_x": .50}
+                        theme_text_color: "Custom"
+                        text_color: 255/255, 255/255, 255/255, 1
+                    MDLabel:
+                        text: "Ajustes"
+                        halign: "center"
+                        font_size: "16sp"
+                        pos_hint: {"center_y": .25, "center_x": .80}
+                        theme_text_color: "Custom"
+                        text_color: 255/255, 255/255, 255/255, 1
+    Screen:
+        name: 'ajuda'
+        BoxLayout:
+            orientation: 'vertical'            
+            ## Cabecalho
+            MDToolbar:
+                md_bg_color: 3/255, 117/255, 37/255, 1
+                title: "Ajuda"
+                halign: "center"
+                right_action_items: [["bell-plus", lambda x: root.navigation('notificacoes')]]
+                left_action_items: [["arrow-left", lambda x: root.navigation('home')]]
+            ScrollView:
+                MDBoxLayout:
+                    orientation: 'vertical'
+                    size_hint: 1, 1.5
+            ##  Rodapé                              
+            MDBoxLayout:
+                name: 'Navigation'
+                orientation: "horizontal"
+                size_hint: 1.0, 0.15
+                md_bg_color: 3/255, 117/255, 37/255, 1
+                MDFloatLayout:
+                    orientation: 'vertical'
+                    MDIconButton:
+                        icon: 'help-circle'
+                        user_font_size : "35sp"
+                        pos_hint: {"center_y": .6, "center_x": .20}
+                        theme_text_color: "Custom"
+                        text_color: 255/255, 255/255, 255/255, 1
+                        on_release: root.navigation('ajuda')
+                    MDIconButton:
+                        icon: 'home'
+                        user_font_size : "35sp"
+                        pos_hint: {"center_y": .6, "center_x": .5}
+                        theme_text_color: "Custom"
+                        text_color: 255/255, 255/255, 255/255, 1
+                        on_release: root.navigation('home')
+                    MDIconButton:
+                        icon: 'cog'
+                        user_font_size : "35sp"
+                        pos_hint: {"center_y": .6, "center_x": .80}
+                        theme_text_color: "Custom"
+                        text_color: 255/255, 255/255, 255/255, 1
+                        on_release: root.navigation('ajustes')
+                    MDLabel:
+                        text: "Ajuda"
+                        halign: "center"
+                        font_size: "16sp"
+                        pos_hint: {"center_y": .25, "center_x": .20}
+                        theme_text_color: "Custom"
+                        text_color: 255/255, 255/255, 255/255, 1
+                    MDLabel:
+                        text: "Tela Inicial"
+                        halign: "center"
+                        font_size: "16sp"
+                        pos_hint: {"center_y": .25, "center_x": .50}
+                        theme_text_color: "Custom"
+                        text_color: 255/255, 255/255, 255/255, 1
+                    MDLabel:
+                        text: "Ajustes"
+                        halign: "center"
+                        font_size: "16sp"
+                        pos_hint: {"center_y": .25, "center_x": .80}
+                        theme_text_color: "Custom"
+                        text_color: 255/255, 255/255, 255/255, 1
+    Screen:
+        name: 'notificacoes'
+        BoxLayout:
+            orientation: 'vertical'            
+            ## Cabecalho
+            MDToolbar:
+                md_bg_color: 3/255, 117/255, 37/255, 1
+                title: "Notificações"
+                halign: "center"
+                right_action_items: [["bell-plus", lambda x: root.navigation('notificacoes')]]
+                left_action_items: [["arrow-left", lambda x: root.navigation('home')]]           
+            MDBoxLayout:
+                orientation: 'vertical'
+                size_hint: 1, 1.5
+                MDFloatLayout:
+                    MDList:
+                        pos_hint: {"center_y": 0.83}
+                        TwoLineIconListItem:
+                            text: "Não esqueça de fazer seu lançamento de despesas diárias!"
+                            secondary_text: "Dura menos de 2 minutos, é coisa rápida"
+                            on_release: root.navigation('add_despesa')
+                            IconLeftWidget:
+                                icon: "arrow-right-bold-circle"
+                        TwoLineIconListItem:
+                            text: "Está chegando a data de pagamento do cartão!"
+                            secondary_text: "Entre na aba de cartões para mais detalhes"
+                            on_release: root.navigation('cartoes')
+                            IconLeftWidget:
+                                icon: "arrow-right-bold-circle"
+                        
+            ##  Rodapé                              
+            MDBoxLayout:
+                name: 'Navigation'
+                orientation: "horizontal"
+                size_hint: 1.0, 0.15
+                md_bg_color: 3/255, 117/255, 37/255, 1
+                MDFloatLayout:
+                    orientation: 'vertical'
+                    MDIconButton:
+                        icon: 'help-circle'
+                        user_font_size : "35sp"
+                        pos_hint: {"center_y": .6, "center_x": .20}
+                        theme_text_color: "Custom"
+                        text_color: 255/255, 255/255, 255/255, 1
+                        on_release: root.navigation('ajuda')
+                    MDIconButton:
+                        icon: 'home'
+                        user_font_size : "35sp"
+                        pos_hint: {"center_y": .6, "center_x": .5}
+                        theme_text_color: "Custom"
+                        text_color: 255/255, 255/255, 255/255, 1
+                        on_release: root.navigation('home')
+                    MDIconButton:
+                        icon: 'cog'
+                        user_font_size : "35sp"
+                        pos_hint: {"center_y": .6, "center_x": .80}
+                        theme_text_color: "Custom"
+                        text_color: 255/255, 255/255, 255/255, 1
+                        on_release: root.navigation('ajustes')
+                    MDLabel:
+                        text: "Ajuda"
+                        halign: "center"
+                        font_size: "16sp"
+                        pos_hint: {"center_y": .25, "center_x": .20}
+                        theme_text_color: "Custom"
+                        text_color: 255/255, 255/255, 255/255, 1
+                    MDLabel:
+                        text: "Tela Inicial"
+                        halign: "center"
+                        font_size: "16sp"
+                        pos_hint: {"center_y": .25, "center_x": .50}
+                        theme_text_color: "Custom"
+                        text_color: 255/255, 255/255, 255/255, 1
+                    MDLabel:
+                        text: "Ajustes"
+                        halign: "center"
+                        font_size: "16sp"
+                        pos_hint: {"center_y": .25, "center_x": .80}
+                        theme_text_color: "Custom"
+                        text_color: 255/255, 255/255, 255/255, 1
+
+    Screen:
+        name: 'add_receita'
+        BoxLayout:
+            orientation: 'vertical'            
+            ## Cabecalho
+            MDToolbar:
+                md_bg_color: 3/255, 117/255, 37/255, 1
+                title: "Adicionar Receitas"
+                halign: "center"
+                right_action_items: [["bell-plus", lambda x: root.navigation('notificacoes')]]
+                left_action_items: [["arrow-left", lambda x: root.navigation('home')]]
+            MDBoxLayout:
+                orientation: 'vertical'
+                size_hint: 1, 1.5
+                MDFloatLayout:
+                    orientation: 'vertical'
+                    size_hint: 1, .1
+                    MDLabel:
+                        text: 'Insira o valor:'
+                        halign: 'center'
+                        pos_hint: {"center_x": .5, "center_y": .6}
+                        font_size: "16sp"
+                    MDTextField:
+                        text: 'R$ 00,00'
+                        halign: 'center'
+                        pos_hint: {"center_x": .5, "center_y": .25}
+                        font_size: "24sp"
+                        line_color_focus: 177/255, 177/255, 177/255, 1
+                MDFloatLayout:
+                    orientation: 'vertical'
+                    size_hint: 1, .9
+                    MDLabel:
+                        text: 'Descrição'
+                        halign: "center"
+                        pos_hint: {"center_x": .15, "center_y": .9}
+                    MDTextFieldRound:
+                        size_hint: .8, .06
+                        pos_hint: {"center_x": .5, "center_y": .83}
+                        theme_text_color: 'Custom'
+                        normal_color: 226/255, 226/255, 226/255, 1
+                    MDLabel:
+                        text: 'Categoria'
+                        halign: "center"
+                        pos_hint: {"center_x": .15, "center_y": .75}
+                    MDTextFieldRound:
+                        size_hint: .8, .06
+                        pos_hint: {"center_x": .5, "center_y": .68}
+                        theme_text_color: 'Custom'
+                        normal_color: 226/255, 226/255, 226/255, 1
+                    MDLabel:
+                        text: 'Data'
+                        halign: "center"
+                        pos_hint: {"center_x": .12, "center_y": .6}
+                    MDTextFieldRound:
+                        size_hint: .8, .06
+                        pos_hint: {"center_x": .5, "center_y": .53}
+                        theme_text_color: 'Custom'
+                        max_text_length: 10
+                        normal_color: 226/255, 226/255, 226/255, 1
+                    MDFillRoundFlatButton:
+                        text: "Adicionar"
+                        halign: "center"
+                        pos_hint:{"center_x": .5, "center_y":0.25}
+                        size_hint: .8, .13
+                        md_bg_color: 3/255, 117/255, 37/255, 1
+                        font_size: 24
+            ##  Rodapé                              
+            MDBoxLayout:
+                name: 'Navigation'
+                orientation: "horizontal"
+                size_hint: 1.0, 0.15
+                md_bg_color: 3/255, 117/255, 37/255, 1
+                MDFloatLayout:
+                    orientation: 'vertical'
+                    MDIconButton:
+                        icon: 'help-circle'
+                        user_font_size : "35sp"
+                        pos_hint: {"center_y": .6, "center_x": .20}
+                        theme_text_color: "Custom"
+                        text_color: 255/255, 255/255, 255/255, 1
+                        on_release: root.navigation('ajuda')
+                    MDIconButton:
+                        icon: 'home'
+                        user_font_size : "35sp"
+                        pos_hint: {"center_y": .6, "center_x": .5}
+                        theme_text_color: "Custom"
+                        text_color: 255/255, 255/255, 255/255, 1
+                        on_release: root.navigation('home')
+                    MDIconButton:
+                        icon: 'cog'
+                        user_font_size : "35sp"
+                        pos_hint: {"center_y": .6, "center_x": .80}
+                        theme_text_color: "Custom"
+                        text_color: 255/255, 255/255, 255/255, 1
+                        on_release: root.navigation('ajustes')
+                    MDLabel:
+                        text: "Ajuda"
+                        halign: "center"
+                        font_size: "16sp"
+                        pos_hint: {"center_y": .25, "center_x": .20}
+                        theme_text_color: "Custom"
+                        text_color: 255/255, 255/255, 255/255, 1
+                    MDLabel:
+                        text: "Tela Inicial"
+                        halign: "center"
+                        font_size: "16sp"
+                        pos_hint: {"center_y": .25, "center_x": .50}
+                        theme_text_color: "Custom"
+                        text_color: 255/255, 255/255, 255/255, 1
+                    MDLabel:
+                        text: "Ajustes"
+                        halign: "center"
+                        font_size: "16sp"
+                        pos_hint: {"center_y": .25, "center_x": .80}
+                        theme_text_color: "Custom"
+                        text_color: 255/255, 255/255, 255/255, 1
+    Screen:
+        name: 'cartoes'
+        BoxLayout:
+            orientation: 'vertical'            
+            ## Cabecalho
+            MDToolbar:
+                md_bg_color: 3/255, 117/255, 37/255, 1
+                title: "Cartões de Crédito"
+                halign: "center"
+                right_action_items: [["bell-plus", lambda x: root.navigation('notificacoes')]]
+                left_action_items: [["arrow-left", lambda x: root.navigation('home')]]
+            ScrollView:
+                MDBoxLayout:
+                    orientation: 'vertical'
+                    size_hint: 1, 1.5
+            ##  Rodapé                              
+            MDBoxLayout:
+                name: 'Navigation'
+                orientation: "horizontal"
+                size_hint: 1.0, 0.15
+                md_bg_color: 3/255, 117/255, 37/255, 1
+                MDFloatLayout:
+                    orientation: 'vertical'
+                    MDIconButton:
+                        icon: 'help-circle'
+                        user_font_size : "35sp"
+                        pos_hint: {"center_y": .6, "center_x": .20}
+                        theme_text_color: "Custom"
+                        text_color: 255/255, 255/255, 255/255, 1
+                        on_release: root.navigation('ajuda')
+                    MDIconButton:
+                        icon: 'home'
+                        user_font_size : "35sp"
+                        pos_hint: {"center_y": .6, "center_x": .5}
+                        theme_text_color: "Custom"
+                        text_color: 255/255, 255/255, 255/255, 1
+                        on_release: root.navigation('home')
+                    MDIconButton:
+                        icon: 'cog'
+                        user_font_size : "35sp"
+                        pos_hint: {"center_y": .6, "center_x": .80}
+                        theme_text_color: "Custom"
+                        text_color: 255/255, 255/255, 255/255, 1
+                        on_release: root.navigation('ajustes')
+                    MDLabel:
+                        text: "Ajuda"
+                        halign: "center"
+                        font_size: "16sp"
+                        pos_hint: {"center_y": .25, "center_x": .20}
+                        theme_text_color: "Custom"
+                        text_color: 255/255, 255/255, 255/255, 1
+                    MDLabel:
+                        text: "Tela Inicial"
+                        halign: "center"
+                        font_size: "16sp"
+                        pos_hint: {"center_y": .25, "center_x": .50}
+                        theme_text_color: "Custom"
+                        text_color: 255/255, 255/255, 255/255, 1
+                    MDLabel:
+                        text: "Ajustes"
+                        halign: "center"
+                        font_size: "16sp"
+                        pos_hint: {"center_y": .25, "center_x": .80}
+                        theme_text_color: "Custom"
+                        text_color: 255/255, 255/255, 255/255, 1
+
+    Screen:
+        name: 'categorias'
+        BoxLayout:
+            orientation: 'vertical'            
+            ## Cabecalho
+            MDToolbar:
+                md_bg_color: 3/255, 117/255, 37/255, 1
+                title: "Categorias de Gastos"
+                halign: "center"
+                right_action_items: [["bell-plus", lambda x: root.navigation('notificacoes')]]
+                left_action_items: [["arrow-left", lambda x: root.navigation('home')]]
+            ScrollView:
+                MDBoxLayout:
+                    orientation: 'vertical'
+                    size_hint: 1, 1.5
+                    MDBoxLayout:
+                        id: ctg_form_box
+                        orientation:'vertical'
+                        size_hint: 1, 0.5
+                        MDFloatLayout:
+                            MDLabel:
+                                text: "Nome da categoria:"
+                                halign: 'center'
+                                pos_hint: {"center_x": .23, "center_y": .90}
+                                font_size: "16sp"
+                            MDTextFieldRound:
+                                id: ctg_nome
+                                size_hint: .8, 0.1
+                                pos_hint: {"center_x": .5, "center_y": .78}
+                                theme_text_color: 'Custom'
+                                normal_color: 226/255, 226/255, 226/255, 1
+                            MDLabel:
+                                text: "Limite da categoria:"
+                                halign: 'center'
+                                pos_hint: {"center_x": .23, "center_y": .68}
+                                font_size: "16sp"
+                            MDTextFieldRound:
+                                id: ctg_limite
+                                size_hint: .8, 0.1
+                                pos_hint: {"center_x": .5, "center_y": .56}
+                                hint_text: 'Ex: 100,80'
+                                theme_text_color: 'Custom'
+                                normal_color: 226/255, 226/255, 226/255, 1
+                            MDFillRoundFlatButton:
+                                text: "Criar categoria"
+                                halign: "center"
+                                pos_hint:{"center_x": .5, "center_y":0.35}
+                                size_hint: .86, .2
+                                md_bg_color: 7/255, 166/255, 54/255, 1
+                                font_size: 24
+                                on_release: 
+                                    msg=root.add_categoria(ctg_nome.text, ctg_limite.text)
+                                    app.show_dialog(msg)
+                            MDLabel:
+                                text: "___________________________________________________________"
+                                halign: 'center'
+                                pos_hint:{"center_x": .5, "center_y":0.15}
+                                font_size: "16sp"
+                    MDBoxLayout:
+                        orientation:'vertical'
+                        size_hint: 1, 1.0
+                        MDFloatLayout:
+                            MDList:
+                                pos_hint: {"center_y": 0.83}
+                                TwoLineAvatarIconListItem:
+                                    text: "Alimentação"
+                                    secondary_text: "Limite R$500,00"
+                                    IconLeftWidget:
+                                        icon: "trash-can"
+                                    IconRightWidget:
+                                        icon: "pencil"
+                                TwoLineAvatarIconListItem:
+                                    text: "Transporte"
+                                    secondary_text: "Limite R$300,00"
+                                    IconLeftWidget:
+                                        icon: "trash-can"
+                                    IconRightWidget:
+                                        icon: "pencil"
+                                TwoLineAvatarIconListItem:
+                                    text: "Saúde"
+                                    secondary_text: "Limite R$100,00"
+                                    IconLeftWidget:
+                                        icon: "trash-can"
+                                    IconRightWidget:
+                                        icon: "pencil"
+
+
+            ##  Rodapé                              
+            MDBoxLayout:
+                name: 'Navigation'
+                orientation: "horizontal"
+                size_hint: 1.0, 0.15
+                md_bg_color: 3/255, 117/255, 37/255, 1
+                MDFloatLayout:
+                    orientation: 'vertical'
+                    MDIconButton:
+                        icon: 'help-circle'
+                        user_font_size : "35sp"
+                        pos_hint: {"center_y": .6, "center_x": .20}
+                        theme_text_color: "Custom"
+                        text_color: 255/255, 255/255, 255/255, 1
+                        on_release: root.navigation('ajuda')
+                    MDIconButton:
+                        icon: 'home'
+                        user_font_size : "35sp"
+                        pos_hint: {"center_y": .6, "center_x": .5}
+                        theme_text_color: "Custom"
+                        text_color: 255/255, 255/255, 255/255, 1
+                        on_release: root.navigation('home')
+                    MDIconButton:
+                        icon: 'cog'
+                        user_font_size : "35sp"
+                        pos_hint: {"center_y": .6, "center_x": .80}
+                        theme_text_color: "Custom"
+                        text_color: 255/255, 255/255, 255/255, 1
+                        on_release: root.navigation('ajustes')
+                    MDLabel:
+                        text: "Ajuda"
+                        halign: "center"
+                        font_size: "16sp"
+                        pos_hint: {"center_y": .25, "center_x": .20}
+                        theme_text_color: "Custom"
+                        text_color: 255/255, 255/255, 255/255, 1
+                    MDLabel:
+                        text: "Tela Inicial"
+                        halign: "center"
+                        font_size: "16sp"
+                        pos_hint: {"center_y": .25, "center_x": .50}
+                        theme_text_color: "Custom"
+                        text_color: 255/255, 255/255, 255/255, 1
+                    MDLabel:
+                        text: "Ajustes"
+                        halign: "center"
+                        font_size: "16sp"
+                        pos_hint: {"center_y": .25, "center_x": .80}
+                        theme_text_color: "Custom"
+                        text_color: 255/255, 255/255, 255/255, 1
+
+    Screen:
+        name: 'metas'
+        BoxLayout:
+            orientation: 'vertical'            
+            ## Cabecalho
+            MDToolbar:
+                md_bg_color: 3/255, 117/255, 37/255, 1
+                title: "Metas"
+                halign: "center"
+                right_action_items: [["bell-plus", lambda x: root.navigation('notificacoes')]]
+                left_action_items: [["arrow-left", lambda x: root.navigation('home')]]
+            ScrollView:
+                MDBoxLayout:
+                    orientation: 'vertical'
+                    size_hint: 1, 1.5
+            ##  Rodapé                              
+            MDBoxLayout:
+                name: 'Navigation'
+                orientation: "horizontal"
+                size_hint: 1.0, 0.15
+                md_bg_color: 3/255, 117/255, 37/255, 1
+                MDFloatLayout:
+                    orientation: 'vertical'
+                    MDIconButton:
+                        icon: 'help-circle'
+                        user_font_size : "35sp"
+                        pos_hint: {"center_y": .6, "center_x": .20}
+                        theme_text_color: "Custom"
+                        text_color: 255/255, 255/255, 255/255, 1
+                        on_release: root.navigation('ajuda')
+                    MDIconButton:
+                        icon: 'home'
+                        user_font_size : "35sp"
+                        pos_hint: {"center_y": .6, "center_x": .5}
+                        theme_text_color: "Custom"
+                        text_color: 255/255, 255/255, 255/255, 1
+                        on_release: root.navigation('home')
+                    MDIconButton:
+                        icon: 'cog'
+                        user_font_size : "35sp"
+                        pos_hint: {"center_y": .6, "center_x": .80}
+                        theme_text_color: "Custom"
+                        text_color: 255/255, 255/255, 255/255, 1
+                        on_release: root.navigation('ajustes')
+                    MDLabel:
+                        text: "Ajuda"
+                        halign: "center"
+                        font_size: "16sp"
+                        pos_hint: {"center_y": .25, "center_x": .20}
+                        theme_text_color: "Custom"
+                        text_color: 255/255, 255/255, 255/255, 1
+                    MDLabel:
+                        text: "Tela Inicial"
+                        halign: "center"
+                        font_size: "16sp"
+                        pos_hint: {"center_y": .25, "center_x": .50}
+                        theme_text_color: "Custom"
+                        text_color: 255/255, 255/255, 255/255, 1
+                    MDLabel:
+                        text: "Ajustes"
+                        halign: "center"
+                        font_size: "16sp"
+                        pos_hint: {"center_y": .25, "center_x": .80}
+                        theme_text_color: "Custom"
+                        text_color: 255/255, 255/255, 255/255, 1

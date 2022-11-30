@@ -1,0 +1,1 @@
+CONN_STR='mssql+pymssql://adminvinicius:vinnyadmin123!@viniciussilva-sv.database.windows.net:1433/viniciussilva-db'
