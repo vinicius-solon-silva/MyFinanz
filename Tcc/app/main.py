@@ -22,9 +22,8 @@ class Interface(ScreenManager):
         msg = db_categoria.gera_categoria(nome, valor)
         return msg
     def gen_chart(self):
-        dict = {"neymar": 250.00, "messi": 300.00}
+        dict = {"Alimentação": 250.00, "Transporte": 300.00, "Aluguel": 800.00, "Lazer": 150.00}
         gen_charts.generate(dict)
-
                 
 class Myapp(MDApp):
     def build(self):
