@@ -403,7 +403,7 @@
                                         size_hint: 1, 1
                                 MDBoxLayout:
                                     size_hint: 1, 0.2
-                                    md_bg_color: 3/255, 117/255, 37/255, 1
+                                    md_bg_color: 7/255, 166/255, 54/255, 1
                                     MDRectangleFlatButton:
                                         size_hint: 1, 1
                                         text: "Ver mais"
@@ -442,7 +442,7 @@
                                         size_hint: 1, 1
                                 MDBoxLayout:
                                     size_hint: 1, 0.2
-                                    md_bg_color: 3/255, 117/255, 37/255, 1
+                                    md_bg_color: 7/255, 166/255, 54/255, 1
                                     MDRectangleFlatButton:
                                         size_hint: 1, 1
                                         text: "Ver mais"
@@ -632,10 +632,55 @@
                 halign: "center"
                 right_action_items: [["bell-plus", lambda x: root.navigation('notificacoes')]]
                 left_action_items: [["arrow-left", lambda x: root.navigation('home')]]
-            ScrollView:
+            MDBoxLayout:
+                orientation: 'vertical'
+                size_hint: 1, 1.5
                 MDBoxLayout:
                     orientation: 'vertical'
-                    size_hint: 1, 1.5
+                    size_hint: 1, .8
+                    MDFloatLayout:
+                        MDList:
+                            pos_hint: {"center_y": 0.70}
+                            OneLineIconListItem:
+                                text: "Nome Completo"
+                                IconLeftWidget:
+                                    icon: "pencil"
+                            OneLineIconListItem:
+                                text: "Email"
+                                IconLeftWidget:
+                                    icon: "pencil"
+                            OneLineIconListItem:
+                                text: "Cargo profissional"
+                                IconLeftWidget:
+                                    icon: "pencil"  
+                            OneLineIconListItem:
+                                text: "Salário mensal"
+                                IconLeftWidget:
+                                    icon: "pencil"   
+                MDBoxLayout:
+                    orientation: 'vertical'
+                    size_hint: 1, .5
+                    MDFloatLayout:
+                        MDFillRoundFlatButton:
+                            text: "Sair da conta"
+                            halign: "center"
+                            pos_hint:{"center_x": .5, "center_y":0.55}
+                            size_hint: .8, .2
+                            md_bg_color: 7/255, 166/255, 54/255, 1
+                            font_size: 24
+                            on_release:
+                                root.navigation('login')
+                        MDFillRoundFlatButton:
+                            text: "Excluir Conta"
+                            halign: "center"
+                            pos_hint:{"center_x": .5, "center_y":0.25}
+                            size_hint: .8, .2
+                            md_bg_color: 255/255, 0/255, 0/255, 1
+                            font_size: 24
+                            on_release:
+                                app.show_excluir()
+
+                            
             ##  Rodapé                              
             MDBoxLayout:
                 name: 'Navigation'

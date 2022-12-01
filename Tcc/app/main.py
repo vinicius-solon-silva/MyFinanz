@@ -3,6 +3,7 @@ from kivy.lang import Builder
 from kivy.uix.screenmanager import ScreenManager,Screen
 from kivy.core.window import Window
 from kivymd.uix.dialog import MDDialog
+from kivymd.uix.button import MDFlatButton
 import db_categoria
 import gen_charts
 
@@ -22,7 +23,7 @@ class Interface(ScreenManager):
         msg = db_categoria.gera_categoria(nome, valor)
         return msg
     def gen_chart(self):
-        dict = {"Alimentação": 250.00, "Transporte": 300.00, "Aluguel": 800.00, "Lazer": 150.00}
+        dict = {"Alimentação": 250.00, "Transporte": 300.00, "Aluguel": 800.00}
         gen_charts.generate(dict)
                 
 class Myapp(MDApp):
@@ -35,6 +36,23 @@ class Myapp(MDApp):
     def show_dialog(self, message):
         if not self.dialog:
             self.dialog = MDDialog(title=message)
+        self.dialog.open()
+    
+    # Dialog
+    dialog = None
+    def show_excluir(self):
+        if not self.dialog:
+            self.dialog = MDDialog(
+                text="Deseja realmente excluir?",
+                buttons=[
+                    MDFlatButton(
+                        text="SIM",
+                    ),
+                    MDFlatButton(
+                        text="Nao",
+                    ),
+                ],
+            )
         self.dialog.open()
 
     
