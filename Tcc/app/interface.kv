@@ -1271,3 +1271,68 @@
                         pos_hint: {"center_y": .25, "center_x": .80}
                         theme_text_color: "Custom"
                         text_color: 255/255, 255/255, 255/255, 1
+    Screen:
+        name: 'metas'
+        BoxLayout:
+            orientation: 'vertical'            
+            ## Cabecalho
+            MDToolbar:
+                md_bg_color: 3/255, 117/255, 37/255, 1
+                title: "Metas"
+                halign: "center"
+                right_action_items: [["bell-plus", lambda x: root.navigation('notificacoes')]]
+                left_action_items: [["arrow-left", lambda x: root.navigation('home')]]
+            ScrollView:
+                MDBoxLayout:
+                    orientation: 'vertical'
+                    size_hint: 1, 1.5
+            ##  Rodapé                              
+            MDBoxLayout:
+                name: 'Navigation'
+                orientation: "horizontal"
+                size_hint: 1.0, 0.15
+                md_bg_color: 3/255, 117/255, 37/255, 1
+                MDFloatLayout:
+                    orientation: 'vertical'
+                    MDIconButton:
+                        icon: 'help-circle'
+                        user_font_size : "35sp"
+                        pos_hint: {"center_y": .6, "center_x": .20}
+                        theme_text_color: "Custom"
+                        text_color: 255/255, 255/255, 255/255, 1
+                        on_release: root.navigation('ajuda')
+                    MDIconButton:
+                        icon: 'home'
+                        user_font_size : "35sp"
+                        pos_hint: {"center_y": .6, "center_x": .5}
+                        theme_text_color: "Custom"
+                        text_color: 255/255, 255/255, 255/255, 1
+                        on_release: root.navigation('home')
+                    MDIconButton:
+                        icon: 'cog'
+                        user_font_size : "35sp"
+                        pos_hint: {"center_y": .6, "center_x": .80}
+                        theme_text_color: "Custom"
+                        text_color: 255/255, 255/255, 255/255, 1
+                        on_release: root.navigation('ajustes')
+                    MDLabel:
+                        text: "Ajuda"
+                        halign: "center"
+                        font_size: "16sp"
+                        pos_hint: {"center_y": .25, "center_x": .20}
+                        theme_text_color: "Custom"
+                        text_color: 255/255, 255/255, 255/255, 1
+                    MDLabel:
+                        text: "Tela Inicial"
+                        halign: "center"
+                        font_size: "16sp"
+                        pos_hint: {"center_y": .25, "center_x": .50}
+                        theme_text_color: "Custom"
+                        text_color: 255/255, 255/255, 255/255, 1
+                    MDLabel:
+                        text: "Ajustes"
+                        halign: "center"
+                        font_size: "16sp"
+                        pos_hint: {"center_y": .25, "center_x": .80}
+                        theme_text_color: "Custom"
+                        text_color: 255/255, 255/255, 255/255, 1
