@@ -4,10 +4,10 @@
         MDBoxLayout:
             orientation: 'vertical'            
             size_hint: 1, 1
-            md_bg_color: 3/255, 117/255, 37/255, 1
             MDBoxLayout:
                 orientation: 'vertical'    
                 size_hint: 1, 0.5
+                md_bg_color: 3/255, 117/255, 37/255, 1
                 MDFloatLayout:
                     Image:
                         source: "../img/logo.png"
@@ -22,25 +22,25 @@
                         halign: 'center'
                         pos_hint: {"center_x": .15, "center_y": .88}
                         font_size: "24sp"
-                        theme_text_color: 'Custom'
-                        text_color: 1,1,1,1
+
                     MDTextFieldRound:
                         size_hint: .8, .13
                         pos_hint: {"center_x": .5, "center_y": .75}
                         theme_text_color: 'Custom'
                         normal_color: 226/255, 226/255, 226/255, 1
+                        hint_text: 'Ex: nome@email.com.br'
                     MDLabel:
                         text: 'Senha'
                         halign: 'center'
                         pos_hint: {"center_x": .15, "center_y": .58}
                         font_size: "24sp"
-                        theme_text_color: 'Custom'
-                        text_color: 1,1,1,1
+                        
                     MDTextFieldRound:
                         size_hint: .8, .13
                         pos_hint: {"center_x": .5, "center_y": .45}
                         theme_text_color: 'Custom'
                         normal_color: 226/255, 226/255, 226/255, 1
+                        password: True
                     MDFillRoundFlatButton:
                         text: "Entrar"
                         halign: "center"
@@ -101,16 +101,20 @@
                         pos_hint: {"center_x": .5, "center_y": .85}
                         theme_text_color: 'Custom'
                         normal_color: 226/255, 226/255, 226/255, 1
+                        hint_text: 'Ex: João Oliveira Santos'
                     MDLabel:
                         text: "Email"
                         halign: 'center'
                         pos_hint: {"center_x": .12, "center_y": .75}
                         font_size: "16sp"
+                        
                     MDTextFieldRound:
                         size_hint: .8, .06
                         pos_hint: {"center_x": .5, "center_y": .70}
                         theme_text_color: 'Custom'
-                        normal_color: 226/255, 226/255, 226/255, 1  
+                        normal_color: 226/255, 226/255, 226/255, 1 
+                        hint_text: 'Ex: nome@email.com.br'
+
                     MDLabel:
                         text: "Data de Nascimento:"
                         halign: 'center'
@@ -121,6 +125,7 @@
                         pos_hint: {"center_x": .5, "center_y": .55}
                         theme_text_color: 'Custom'
                         normal_color: 226/255, 226/255, 226/255, 1
+                        hint_text: 'Ex: dd/MM/aaaa'
                     MDLabel:
                         text: "Senha:"
                         halign: 'center'
@@ -130,7 +135,8 @@
                         size_hint: .8, .06
                         pos_hint: {"center_x": .5, "center_y": .40}
                         theme_text_color: 'Custom'
-                        normal_color: 226/255, 226/255, 226/255, 1 
+                        normal_color: 226/255, 226/255, 226/255, 1
+                        password: True
                     MDLabel:
                         text: "Confirmar Senha:"
                         halign: 'center'
@@ -141,6 +147,7 @@
                         pos_hint: {"center_x": .5, "center_y": .25}
                         theme_text_color: 'Custom'
                         normal_color: 226/255, 226/255, 226/255, 1 
+                        password: True
                     MDFillRoundFlatButton:
                         text: "Prosseguir"
                         halign: "center"
@@ -188,6 +195,7 @@
                         pos_hint: {"center_x": .5, "center_y": .85}
                         theme_text_color: 'Custom'
                         normal_color: 226/255, 226/255, 226/255, 1
+                        hint_text: 'Ex: Pedreiro'
                     MDLabel:
                         text: "Salário mensal:"
                         halign: 'center'
@@ -197,7 +205,8 @@
                         size_hint: .8, .06
                         pos_hint: {"center_x": .5, "center_y": .70}
                         theme_text_color: 'Custom'
-                        normal_color: 226/255, 226/255, 226/255, 1  
+                        normal_color: 226/255, 226/255, 226/255, 1 
+                        hint_text: 'Ex: 1200,00' 
                     MDCheckbox:
                         size_hint: None, None
                         pos_hint: {'center_x': .10, 'center_y': .60}
@@ -212,7 +221,50 @@
                         size_hint: .86, .08
                         md_bg_color: 7/255, 166/255, 54/255, 1
                         font_size: 24
-                        on_release: root.navigation('home')
+                        on_release: root.navigation('cadastro_final')
+
+    Screen:
+        name: "cadastro_final"        
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint: 1, 1
+            MDBoxLayout:
+                orientation:'vertical'
+                size_hint: 1, 0.1
+                md_bg_color: 3/255, 117/255, 37/255, 1
+                MDLabel:
+                    text: "Seu cadastro foi concluído!"
+                    halign: 'center'
+                    pos_hint: {"center_x": .5, "center_y": .5}
+                    font_size: "30sp"
+                    theme_text_color: 'Custom'
+                    text_color: 1,1,1,1
+            MDBoxLayout:
+                orientation:'vertical'
+                size_hint: 1, 1
+                MDFloatLayout:
+                    MDLabel:
+                        text: "Seja bem-vindo ao Myfinaz!"
+                        halign: 'center'
+                        pos_hint: {"center_x": .5, "center_y": .90}
+                        font_size: "24sp"
+                    MDLabel:
+                        text: "Estamos muito contentes em te conhecer"
+                        halign: 'center'
+                        pos_hint: {"center_x": .5, "center_y": .85}
+                        font_size: "16sp"
+                    Image:
+                        source: "../img/Avatar-1.png"
+                        pos_hint: {"center_x": .5, "center_y": .5}
+                        size_hint: 0.7, 0.7
+                    MDFillRoundFlatButton:
+                        text: "Fazer login"
+                        halign: "center"
+                        pos_hint:{"center_x": .5, "center_y":0.10}
+                        size_hint: .86, .08
+                        md_bg_color: 7/255, 166/255, 54/255, 1
+                        font_size: 24
+                        on_release: root.navigation('login')
 
     Screen:
         name: "home"        
